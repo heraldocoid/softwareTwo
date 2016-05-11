@@ -1,0 +1,173 @@
+
+#contenedor{
+	z-index: 999;
+	border: 8px solid #ffffff;
+	box-shadow: 0px 0px 19px 1px #6d6d6d;
+	margin-top: -250px;
+	margin-left: -153px;
+	top: 50%;
+	left: 50%;
+	padding: 12px;
+	position: fixed;
+	width: 265px;
+	background-color: red;
+	border-radius: 8px;
+	padding-bottom: 15px;
+	font-size: 14px;
+}
+
+#contenedor3{
+	z-index: 999;
+	border: 8px solid #ffffff;
+	box-shadow: 0px 0px 19px 1px #6d6d6d;
+	margin-top: -156px;
+	margin-left: -153px;
+	top: 50%;
+	left: 50%;
+	padding: 12px;
+	position: fixed;
+	width: 265px;
+	background-color: red;
+	border-radius: 8px;
+	padding-bottom: 15px;
+	font-size: 14px;
+}
+
+#fondonegro{
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #666;
+	z-index: 99;
+	opacity: 0.6;
+}
+
+.derecha{
+	float: right;	
+}
+
+.cursor{
+	cursor: pointer;	
+}
+
+header{
+	margin: 100px auto;
+	width: 1200px;
+	height: 230px;
+	background-color: red;
+}
+
+div.contenedor2{
+	width: 300px;
+	height: 230px;
+	float: left;
+	-webkit-transition: height .4s;
+}
+
+div#uno{
+	background-color: rgb(208,101,3);
+}
+
+div#dos{
+	background-color: rgb(233,147,26);
+}
+
+div#tres{
+	background-color: rgb(22,145,190);
+}
+
+div#cuatro{
+	background-color: rgb(22,107,162);
+}
+
+div#cinco{
+	background-color: rgb(154,87,187);
+}
+
+img.icon{
+	display: block;
+	margin: 50px auto;
+	background-color: rgba(255,255,255,.15);
+	width: 40px;
+	padding: 20px;
+	-webkit-border-radius: 50%;
+	-webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
+	-webkit-transition: box-shadow .4s;
+}
+
+p.texto{
+	font-size: 1.2em;
+	color:white;
+	text-align: center;
+	padding-top: 10px;
+	opacity: .6;
+	-webkit-transition: padding-top .4s;
+}
+
+div.contenedor2:hover{
+	height: 250px;
+}
+
+div.contenedor2:hover p.texto{
+	padding-top: 30px;
+	opacity: 1;
+}
+
+div.contenedor2:hover img.icon{
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(255,255,255,.6);
+}
+
+th{
+	background: #E9931A;
+	padding: 5px;
+}
+
+th:hover{
+	background: #D06503;
+	padding: 5px;
+}
+
+tr td{
+	background: #1691BE;
+	padding: 5px;
+	text-align: center;
+}
+
+tr td:hover{
+	background: #166BA2;
+}
+
+table #press{
+	margin: auto;
+}
+
+
+
+label{
+	color: #ffffff;
+}
+/*Validaciones*/
+
+.error{
+	background-color: #ffffff;
+	padding: 6px 12px;
+	border-radius: 4px;
+	color: #000000;
+	font-weight: bold;
+	margin-left: 16px;
+	margin-top: 6px;
+	position: absolute;
+}
+
+.error:before{ /* Este es un truco para crear una flechita */
+	content: '';
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid #ffffff;
+    border-left: 8px solid transparent;
+    left: -16px;
+    position: absolute;
+    top: 5px;
+}
