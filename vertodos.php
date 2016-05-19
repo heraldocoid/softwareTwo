@@ -1,13 +1,9 @@
 <?php
 session_start();
 include "Clases.php";
-/*$tipos = $_GET['tipo'];
-$sql="select *from ejercicios where tipo='".$tipos."'";
-$respuesta=mysql_query($sql,$conexion);*/
 
-
-$tipos = $_GET['tipo'];
-$query_mostrarEjercicios = "SELECT * FROM ejercicios_usuario WHERE fk_ejercicio_tipo = '".$tipos."' ";
+$tipos = $_GET['fk_ejercicio'];
+$query_mostrarEjercicios = "SELECT * FROM ejercicios_usuario WHERE fk_ejercicio = '".$tipos."' ";
 mysql_select_db($database, $conexion);
 $datos_consultarEjercicios = mysql_query($query_mostrarEjercicios, $conexion) or die (mysql_error());
 
@@ -16,12 +12,14 @@ $datos_consultarEjercicios = mysql_query($query_mostrarEjercicios, $conexion) or
 <html>
 <head>
 	<title></title>
+	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
 	<table>
 		<tr>
+			<th>Categoria</th>
 			<th>Nombre ejercicio</th>
 			<th>Serie</th>
 			<th>Repeticiones</th>

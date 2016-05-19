@@ -10,15 +10,13 @@
 <body>
 	<header style="background:#fff;">
 		<div id="contenedor3">
-			<form action="autentica.php" method="post">
-				<!--input type="text" name="identificacion" placeholder="Identificación"/-->
-				<label>Username*</label><br/>
-				<input type="text" name="usuario">
-				<br/><label>Password*</label><br/>
+			<form action="restablecer_password.php" method="post">
+				<label>N° identificación*</label><br/>
+				<input type="text" name="identificacion">
+				<br><label>Password*</label><br/>
 				<input type="password" name="contrasena">
-				<br/><a href="restablecer.php" style="color:#fff;">Restablecer la contraseña</a><br>
-				<input type="submit" value="Ingresar" />
+				<input type="submit" value="registrar">
 			</form>
 		</div>
 	</header>
-</body>
+</body>		

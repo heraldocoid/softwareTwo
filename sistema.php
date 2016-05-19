@@ -6,6 +6,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="Js/efectos.js"> </script>
 	<script src="Js/scripts.js"> </script>
+	<script src="Js/jquery.numeric.js"> </script>
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
@@ -143,20 +144,26 @@
 					<option>--Seleccionar--</option>
 				<?php 
 				while($relacion = mysql_fetch_array($respuesta))
-					echo '<option value="'.$relacion['tipo'].'"> '.$relacion['tipo'].'</option>';
+					echo '<option value="'.$relacion['tipo'].'" selected> '.$relacion['tipo'].'</option>';
 				?>
 				</select>
 				<br/><label>Tipo Ejercicio*</label><br/>
-				<select name="TipoEjercicio" class="te">
+				<select name="fk_ejercicio_tipo" class="te">
+					<option>--Seleccionar--</option>
 				<?php
-				if($relacion['tipo'] != "--Seleccionar--"){
+				/*if($relacion['tipo'] != "--Seleccionar--"){
 					$consultar = "select nombre_ejercicio from ejercicios where tipo='".$relacion['tipo']."'";
 					$datos_consultar = mysql_query($consultar, $conexion);
 					while($ejercicio_nombre = mysql_fetch_array($datos_consultar))
-					echo '<option value="'.$ejercicio_nombre['nombre_ejercicio'].'"> '.$ejercicio_nombre['nombre_ejercicio'].'</option>';
+					echo '<option value="'.$ejercicio_nombre['nombre_ejercicio'].'" selected> '.$ejercicio_nombre['nombre_ejercicio'].'</option>';
 					echo $consultar;
-				} 
-					
+				} */
+
+				$consultar = "Select nombre_ejercicio from ejercicios";
+				$qry_ejercicios = mysql_query($consultar,$conexion);
+					while($rela_ejercicio = mysql_fetch_array($qry_ejercicios)){
+						echo '<option value="'.$rela_ejercicio['nombre_ejercicio'].'"> '.$rela_ejercicio['nombre_ejercicio'].'</option>';
+					}
 				?>
 				</select>
 				<br/><label>Repeticiones*</label><br/>

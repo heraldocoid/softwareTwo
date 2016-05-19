@@ -60,7 +60,7 @@ header{
 }
 
 div.contenedor2{
-	width: 300px;
+	width: 240px;
 	height: 230px;
 	float: left;
 	-webkit-transition: height .4s;
@@ -147,6 +147,22 @@ table #press{
 
 label{
 	color: #ffffff;
+}
+
+.guardado{
+	width: 300px;
+	margin: 150px auto;
+	background: gray;
+	border-radius: 0px 0px 100px 100px;
+	text-align: center;
+}
+
+.errores{
+	width: 400px;
+	margin: 150px auto;
+	background: gray;
+	border-radius: 0px 0px 100px 100px;
+	text-align: center;
 }
 /*Validaciones*/
 

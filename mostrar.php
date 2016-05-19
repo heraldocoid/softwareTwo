@@ -63,78 +63,21 @@
 			';
 			?>
 	</table>
-			<?php
-			if($row['imc'] >= '25' && $row['genero'] == 'Masculino'){
-				
-
-				//consulto los ejercicios
-				$entrenamiento = "select * from ejercicios_usuario WHERE fk_usuario ='".$cedula."'";
-				//$entrenamiento ="select fk_usuario, count(*) from ejercicios group by tipo having count(*) > 1";
-				$resultado_entrenamiento = mysql_query($entrenamiento, $conexion);
+	<table>
+		<?php 
+			$entrenamiento = "select * from ejercicios_usuario WHERE fk_usuario ='".$cedula."'";
+			$resultado_entrenamiento = mysql_query($entrenamiento, $conexion);
 		?>
-					<br/><br/>
-					<table>
-						<tr>
-							<th>Tipo de ejercicio</th>
-						</tr>
-					
-		<?php
-				while($tipo = mysql_fetch_array($resultado_entrenamiento)){
-				echo '<tr>
-						<td>'.$tipo['fk_ejercicio'].'</td>
-						<td style="background: #FFF;"> <a href="vertodos.php?tipo='.$tipo['fk_ejercicio'].'">ver todos</a></td>
-					</tr>';
-				}//end while
-			}//end if
-
-		?>
-					</table>
-		<?php
-			//PARA CUANDO ES MENOR A 25
-
-			if($row['imc'] <= '25' && $row['genero'] == 'Masculino'){
-					//consulto los ejercicios
-					$entrenamiento = "select * from ejercicios_usuario WHERE fk_usuario ='".$cedula."'";
-					//$entrenamiento ="select fk_usuario, count(*) from ejercicios group by tipo having count(*) > 1";
-					$resultado_entrenamiento = mysql_query($entrenamiento, $conexion);
-		?>
-					<br/><br/>
-					<table>
-						<tr>
-							<th>Tipo de ejercicio</th>
-						</tr>
-		<?php
-				while($tipo = mysql_fetch_array($resultado_entrenamiento)){
-				echo '<tr>
-						<td>'.$tipo['fk_ejercicio'].'</td>
-						<td style="background: #FFF;"> <a href="vertodos.php?tipo='.$tipo['fk_ejercicio_tipo'].'">ver todos</a></td>
-					</tr>';
-				}//end while
-			}//end if
-		?>
-					</table>
-		<?php
-
-
-
-			if($row['imc'] <= '25' && $row['genero'] == 'Femenino'){
-				$entrenamiento = "select * from ejercicios_usuario WHERE fk_usuario ='".$cedula."'";
-				$resultado_entrenamiento = mysql_query($entrenamiento, $conexion);
-		?>	
-					<br/><br/>
-					<table>
-						<tr>
-							<th>Tipo de ejercicio</th>
-						</tr>	
-					<?php
-				while($tipo = mysql_fetch_array($resultado_entrenamiento)){
-				echo '<tr>
-						<td>'.$tipo['fk_ejercicio'].'</td>
-						<td style="background: #FFF;"> <a href="vertodos.php?tipo='.$tipo['fk_ejercicio'].'">ver todos</a></td>
-					</tr>';
-				}//end while
-			}//end if
-
+		<tr>
+			<th>Tipo de ejercicio</th>
+		</tr>
+		<?php 
+			while($tipo = mysql_fetch_array($resultado_entrenamiento)){
+				echo '<tr> 
+					<td>'.$tipo['fk_ejercicio'].'</td>
+					<td style="background: #FFF;"> <a href="vertodos.php?fk_ejercicio='.$tipo['fk_ejercicio'].'">ver todos</a></td>
+				</tr>';
+			}
 		?>
 	</table>
 </body>

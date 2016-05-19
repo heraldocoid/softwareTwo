@@ -15,29 +15,42 @@
 </head>
 
 <body>
-	<form action="editar.php" method="post">
-		<input type="hidden" name="cedula" value="<?php echo $row_editor['cedula']?>">
-		<input type="text" name="primerNombre" value="<?php echo $row_editor['primerNombre']?>">
-		<input type="text" name="segundoNombre" value="<?php echo $row_editor['segundoNombre']?>">
-		<input type="text" name="primerApellido" value="<?php echo $row_editor['primerApellido']?>">
-		<input type="text" name="segundoApellido" value="<?php echo $row_editor['segundoApellido']?>">
-		<input type="text" name="edad" value="<?php echo $row_editor['edad']?>">
-		<select name="genero">
-			<option>----Genero----</option>
-			<option>Masculino</option>
-			<option>Femenino</option>
-		</select>
-		<input type="text" name="altura" value="<?php echo $row_editor['altura']?>">
-		<input type="text" name="peso" value="<?php echo $row_editor['peso']?>">
-		<select name="objetivo">
-			<option>--Actividad--</option>
-			<option>Bajar de peso</option>
-			<option>Subir de peso</option>
-			<option>Marcar</option>
-		</select>
-		<input type="text" name="horas" value="<?php echo $row_editor['horas']?>">
-		<textarea name="observaciones"><?php echo $row_editor['observaciones']; ?></textarea>
-		<input type="submit" value="Actualizar">
-	</form>
+	<div id="contenedor">
+		<form action="editar.php" method="post">
+			<input type="hidden" name="cedula" value="<?php echo $row_editor['cedula']?>">
+			<label>Primer Nombre*</label><br/>
+			<input type="text" name="primerNombre" class="" value="<?php echo $row_editor['primerNombre']?>">
+			<br/><label>Segundo Nombre*</label><br/>
+			<input type="text" name="segundoNombre" class="" value="<?php echo $row_editor['segundoNombre']?>">
+			<br/><label>Primer Apellido*</label><br/>
+			<input type="text" name="primerApellido" class="" value="<?php echo $row_editor['primerApellido']?>">
+			<br/><label>Segundo Apellido*</label><br/>
+			<input type="text" name="segundoApellido" class="" value="<?php echo $row_editor['segundoApellido']?>">
+			<br/><label>Edad*</label><br/>
+			<input type="text" name="edad" class="" value="<?php echo $row_editor['edad']?>">
+			<br/><label>Genero*</label><br/>
+			<select name="genero" class="">
+				<option>----Genero----</option>
+				<option>Masculino</option>
+				<option>Femenino</option>
+			</select>
+			<br/><label>Altura*</label><br/>
+			<input type="text" name="altura" class="" value="<?php echo $row_editor['altura']?>">
+			<br/><label>Peso*</label><br/>
+			<input type="text" name="peso" class="" value="<?php echo $row_editor['peso']?>">
+			<br/><label>Objetivo*</label><br/>
+			<select name="objetivo" class="">
+				<option>--Actividad--</option>
+				<option>Bajar de peso</option>
+				<option>Subir de peso</option>
+				<option>Marcar</option>
+			</select>
+			<br/><label>Horas disponibles*</label><br/>
+			<input type="text" name="horas" class="" value="<?php echo $row_editor['horas']?>">
+			<br/><label>Observaciones*</label><br/>
+			<textarea name="observaciones" class=""><?php echo $row_editor['observaciones']; ?></textarea>
+			<input type="submit" value="Actualizar" id="BtnEditor">
+		</form>
+	</div>
 </body>
 </html>

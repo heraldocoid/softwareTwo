@@ -50,6 +50,8 @@ $(document).ready(function(){
 		}else if(comentario == ''){
 			$(".ob").focus().after("<span class='error'>ingrese un comentario</span>");
 			return false;
+		}else if(edad != /[^0-9]/g,''){
+			$(".ed").focus().after("<span class='error'>solo debe ingresar numeros</span>");
 		}else{
 			return true;
 		}
@@ -116,5 +118,15 @@ $(document).ready(function(){
 			return false;
 		}
 	});
+
+	$('.ced').numeric();
+	$('.ed').numeric();
+	$('.al').numeric(".");
+	$('.pe').numeric();
+	$('.horas').numeric();
+	$('.ide').numeric();
+	$('.fkus').numeric();
+	$('.rep').numeric();
+	$('.ser').numeric();
 
 });
