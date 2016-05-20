@@ -144,7 +144,7 @@
 					<option>--Seleccionar--</option>
 				<?php 
 				while($relacion = mysql_fetch_array($respuesta))
-					echo '<option value="'.$relacion['tipo'].'" selected> '.$relacion['tipo'].'</option>';
+					echo '<option value="'.$relacion['tipo'].'"> '.$relacion['tipo'].'</option>';
 				?>
 				</select>
 				<br/><label>Tipo Ejercicio*</label><br/>

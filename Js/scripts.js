@@ -95,10 +95,10 @@ $(document).ready(function(){
 		if(fk_usuario == ''){
 			$(".fkus").focus().after("<span class='error'>ingrese el usuario</span>");
 			return false;
-		}else if(fk_ejercicio == '--Seleccione--'){
+		}else if(fk_ejercicio == '--Seleccionar--'){
 			$(".fkej").focus().after("<span class='error'>ingrese el ejercicio</span>");
 			return false;
-		}else if(tipo_ejercicio == ''){
+		}else if(tipo_ejercicio == '--Seleccionar--'){
 			$(".te").focus().after("<span class='error'>ingrese el tipo ejercicio</span>");
 			return false;
 		}else if(repeticion == ''){
@@ -111,6 +111,45 @@ $(document).ready(function(){
 			return true;
 		}
 	});
+
+	$("#btnRestablecer").click(function(){
+		$(".error").remove();
+		var rest_ide = $('.res_ide').val();
+		var rest_pass = $('.res_pass').val();
+		if(rest_ide == ''){
+			$(".res_ide").focus().after("<span class='error'>ingrese una identificación</span>");
+			return false;
+		}else if(rest_pass == ''){
+			$(".res_pass").focus().after("<span class='error'>ingrese una password</span>");
+			return false;
+		}else{
+			return true;
+		}
+	});
+
+	$("#btnRegitrarUs").click(function(){
+		$(".error").remove();
+		var reg_ide = $('.reg_ide').val();
+		var reg_tipo = $('.reg_tipo').val();
+		var reg_usu = $('.reg_usu').val();
+		var reg_con = $('.reg_con').val();
+		if(reg_ide == ''){
+			$(".reg_ide").focus().after("<span class='error'>ingrese una identificación</span>");
+			return false;
+		}else if(reg_tipo == '--Tipo--'){
+			$(".reg_tipo").focus().after("<span class='error'>ingrese un tipo de usuario/span>");
+			return false;
+		}else if(reg_usu == ''){
+			$(".reg_usu").focus().after("<span class='error'>ingrese un usuario</span>");
+			return false;
+		}else if(reg_con == ''){
+			$(".reg_con").focus().after("<span class='error'>ingrese una password</span>");
+			return false;
+		}else{
+			return true;
+		}
+	});
+
 
 	$(".ced, .pn, .sn, .pa, .sa, .ed, .gen, .al, .pe, .obj, .horas, .ob, .ide").keyup(function(){
 		if($(this).val() != ""){
@@ -128,5 +167,8 @@ $(document).ready(function(){
 	$('.fkus').numeric();
 	$('.rep').numeric();
 	$('.ser').numeric();
+	$('.res_ide').numeric();
+	$('.reg_ide').numeric();
+
 
 });

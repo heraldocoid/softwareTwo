@@ -10,7 +10,7 @@
 	$contrasena = $row['contrasena'];
   
 
-   if ($contrasena == md5($_POST['contrasena']))
+   if (md5($contrasena) == md5($_POST['contrasena']))
    {				   
      //establecermos las variables de sesión
      	$_SESSION["connect"] = $row["usuario"];
